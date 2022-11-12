@@ -15,16 +15,6 @@ public class HealthBar : MonoBehaviour
     private Color _minHealthColor = Color.red;
     private Coroutine _coroutine;
 
-    public void ChangeSlider()
-    {
-        if (_coroutine != null)
-        {
-            StopCoroutine(_coroutine);
-        }
-
-        _coroutine = StartCoroutine(ChangeValue());
-    }
-
     private void Awake()
     {
         _slider = GetComponent<Slider>();
@@ -39,6 +29,16 @@ public class HealthBar : MonoBehaviour
     private void OnDisable()
     {
         _player.HasChangeHealth -= ChangeSlider;
+    }
+
+    public void ChangeSlider()
+    {
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+        }
+
+        _coroutine = StartCoroutine(ChangeValue());
     }
 
     private IEnumerator ChangeValue()
