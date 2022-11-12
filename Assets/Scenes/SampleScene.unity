@@ -391,9 +391,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae11f8fa18ff13d4185dfa4465206ea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnHealthChange:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &286226285
 Transform:
   m_ObjectHideFlags: 0
@@ -1094,7 +1091,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 286226284}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: IncreaseHealth
+        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -3,7 +3,7 @@ using System;
 
 public class Player : MonoBehaviour
 {
-    public static Action OnTouch;
+    public Action HasChangeHealth;
 
     private float _health = 100f;
     private float _minHealht = 0f;
@@ -14,14 +14,14 @@ public class Player : MonoBehaviour
     public float MinHealth => _minHealht;
     public float MaxHealth => _maxHealth;
 
-    public void IncreaseHealth()
+    public void Heal()
     {
         _health = Mathf.Clamp(_health += _valueHealth, _minHealht, _maxHealth);
-        OnTouch?.Invoke();
+        HasChangeHealth?.Invoke();
     }
     public void TakeDamage()
     {
         _health = Mathf.Clamp(_health -= _valueHealth, _minHealht, _maxHealth);
-        OnTouch?.Invoke();
+        HasChangeHealth?.Invoke();
     }
 }

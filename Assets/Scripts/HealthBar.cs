@@ -33,12 +33,12 @@ public class HealthBar : MonoBehaviour
 
     private void OnEnable()
     {
-        Player.OnTouch += ChangeSlider;
+        _player.HasChangeHealth += ChangeSlider;
     }
 
     private void OnDisable()
     {
-        Player.OnTouch -= ChangeSlider;
+        _player.HasChangeHealth -= ChangeSlider;
     }
 
     private IEnumerator ChangeValue()
